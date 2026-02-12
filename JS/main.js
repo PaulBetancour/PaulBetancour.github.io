@@ -1,11 +1,11 @@
-function filterSelection(category) {
-    let skills = document.getElementsByClassName("skill");
+// Efecto 3D suave en las tarjetas
+document.addEventListener("mousemove", (e) => {
+    const cards = document.querySelectorAll(".card");
 
-    for (let i = 0; i < skills.length; i++) {
-        skills[i].style.display = "none";
+    const x = (window.innerWidth - e.pageX) / 100;
+    const y = (window.innerHeight - e.pageY) / 100;
 
-        if (category === "all" || skills[i].classList.contains(category)) {
-            skills[i].style.display = "inline-block";
-        }
-    }
-}
+    cards.forEach(card => {
+        card.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
+    });
+});
