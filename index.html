@@ -2,63 +2,418 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Paula Betancour | Perfil Profesional</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/styles.css">
+    <title>Consultoría Estadística 2026 · Dashboard</title>
+    <!-- Font Awesome para iconos (opcional pero mejora el diseño) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ===== ESTILOS GENERALES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fc;
+            color: #1e2b3c;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: linear-gradient(135deg, #0b2b4f 0%, #1c4e70 100%);
+            color: white;
+            padding: 40px 0;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .badge-container {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* ===== SECCIÓN DE OBJETIVOS ===== */
+        .section-title {
+            font-size: 1.8rem;
+            margin: 40px 0 20px 0;
+            color: #0b2b4f;
+            border-left: 5px solid #1c4e70;
+            padding-left: 15px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #1c4e70;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: #1c4e70;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #0b2b4f;
+        }
+
+        .card p {
+            color: #4a5c6b;
+            font-size: 0.95rem;
+        }
+
+        /* ===== PROGRESO GENERAL ===== */
+        .progress-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .progress-header h2 {
+            font-size: 1.5rem;
+            color: #0b2b4f;
+        }
+
+        .progress-header span {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1c4e70;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 25px;
+            background-color: #e0e7ef;
+            border-radius: 30px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 45%; /* Este es el porcentaje de avance, ajústalo */
+            background: linear-gradient(90deg, #1c4e70, #2a7faa);
+            border-radius: 30px;
+            position: relative;
+            color: white;
+            line-height: 25px;
+            font-size: 0.8rem;
+            padding-left: 10px;
+        }
+
+        /* ===== TABLA DE TAREAS ===== */
+        .table-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            overflow-x: auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #1c4e70;
+            color: white;
+            padding: 12px;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e7ef;
+        }
+
+        tr:hover {
+            background-color: #f8fafd;
+        }
+
+        .status {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .status.todo {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .status.progress {
+            background-color: #cce5ff;
+            color: #004085;
+        }
+
+        .status.done {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .member {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .member i {
+            font-size: 1.2rem;
+            color: #1c4e70;
+        }
+
+        /* ===== EQUIPO ===== */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .team-card i {
+            font-size: 3rem;
+            color: #1c4e70;
+            margin-bottom: 10px;
+        }
+
+        .team-card h4 {
+            margin-bottom: 5px;
+            color: #0b2b4f;
+        }
+
+        .team-card p {
+            color: #4a5c6b;
+            font-size: 0.9rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            color: #4a5c6b;
+            border-top: 1px solid #d0dbe8;
+        }
+
+        footer a {
+            color: #1c4e70;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-
-    <div class="stars"></div>
-
     <header>
-        <h1>Paula Andrea Betancour Gonzalez</h1>
-        <p class="subtitle">Estudiante de Estadística | Finanzas | Análisis de Datos</p>
-
-        <div class="buttons">
-            <a href="#perfil" class="btn">Perfil</a>
-            <a href="#consultoria" class="btn">Consultoría</a>
-            <a href="#contacto" class="btn">Contacto</a>
+        <div class="container">
+            <h1>📊 Consultoría Estadística 2026</h1>
+            <p>Dashboard de seguimiento del proyecto · Dirección: Prof. Carlos Isaac Zaínea</p>
+            <div class="badge-container">
+                <span class="badge"><i class="fas fa-code-branch"></i> 3 branches</span>
+                <span class="badge"><i class="fas fa-tasks"></i> 8 tareas activas</span>
+                <span class="badge"><i class="fas fa-users"></i> Equipo: 3 miembros</span>
+            </div>
         </div>
     </header>
 
-    <section class="card" id="perfil">
-        <h2>Perfil Profesional</h2>
-        <p>
-            Estudiante de Estadística con estudios en finanzas y contabilidad con experiencia en
-            áreas financieras, realizando análisis financiero y estudios de crédito para la otorgación de
-            cupo, creación y modificación de clientes, revisión y solicitud de pólizas y formatos
-            bancarios.
-        </p>
-        <p>
-            Amplios conocimientos en manejo de bases de datos y conocimientos básicos de programación
-            (RStudio, Visual Basic, SQL). Experiencia realizando informes dinámicos en Dashboard
-            e informes ejecutivos para la alta gerencia y toma de decisiones.
-        </p>
-        <p>
-            Persona responsable, puntual, honesta y cumplidora de los deberes, con gran entusiasmo
-            e iniciativa para trabajar individual o en grupo.
-        </p>
-    </section>
+    <main class="container">
+        <!-- SECCIÓN DE OBJETIVOS -->
+        <h2 class="section-title">🎯 Objetivos del Proyecto</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <i class="fas fa-code"></i>
+                <h3>Control de Versiones</h3>
+                <p>Dominar Git: branches, pull requests y resolución de conflictos en equipo.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Dashboard Estadístico</h3>
+                <p>Visualizar datos del avance del proyecto con gráficos dinámicos.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Diseño Responsivo</h3>
+                <p>Garantizar que la página se vea perfecta en móviles, tablets y desktop.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-users-cog"></i>
+                <h3>Colaboración Real</h3>
+                <p>Simular un entorno profesional con issues, projects y reviews.</p>
+            </div>
+        </div>
 
-    <section class="card" id="consultoria">
-        <h2>Consultoría</h2>
-        <p>
-            Servicios de análisis financiero, evaluación de riesgo crediticio,
-            construcción de dashboards ejecutivos, automatización de reportes y apoyo en
-            toma de decisiones basadas en datos.
-        </p>
-    </section>
+        <!-- SECCIÓN DE PROGRESO GENERAL -->
+        <div class="progress-section">
+            <div class="progress-header">
+                <h2><i class="fas fa-rocket" style="margin-right: 10px;"></i> Progreso General del Proyecto</h2>
+                <span>45%</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" style="width: 45%;">45%</div>
+            </div>
+            <p style="color: #4a5c6b;">✅ Fase 1 completada | 🔄 Fase 2 en desarrollo | ⏳ Fase 3 pendiente</p>
+        </div>
 
-    <section class="card" id="contacto">
-        <h2>Contacto</h2>
-        <p>Email: tuemail@email.com</p>
-        <p>LinkedIn: linkedin.com/in/tuperfil</p>
-    </section>
+        <!-- TABLA DE TAREAS POR PARTICIPANTE -->
+        <h2 class="section-title">📋 Tareas Activas · GitHub Projects</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tarea / Issue</th>
+                        <th>Asignado a</th>
+                        <th>Estado</th>
+                        <th>Fecha Límite</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#3 Crear sección "Servicios" con diseño responsive</td>
+                        <td class="member"><i class="fas fa-user-circle"></i> Jhonatan Cañon</td>
+                        <td><span class="status todo"><i class="fas fa-clock"></i> Backlog</span></td>
+                        <td>20/02/2026</td>
+                    </tr>
+                    <tr>
+                        <td>#5 Implementar formulario de contacto con JS</td>
+                        <td class="member"><i class="fas fa-user-circle"></i> German Angel</td>
+                        <td><span class="status progress"><i class="fas fa-spinner"></i> In Progress</span></td>
+                        <td>22/02/2026</td>
+                    </tr>
+                    <tr>
+                        <td>#1 Configurar rulesets en rama main</td>
+                        <td class="member"><i class="fas fa-user-circle"></i> Paula Betancour</td>
+                        <td><span class="status done"><i class="fas fa-check-circle"></i> Done</span></td>
+                        <td>15/02/2026</td>
+                    </tr>
+                    <tr>
+                        <td>#7 Diseñar logo y paleta de colores</td>
+                        <td class="member"><i class="fas fa-user-circle"></i> Paula Betancour</td>
+                        <td><span class="status todo"><i class="fas fa-clock"></i> Ready</span></td>
+                        <td>25/02/2026</td>
+                    </tr>
+                    <tr>
+                        <td>#4 Conectar repositorio con GitHub Pages</td>
+                        <td class="member"><i class="fas fa-user-circle"></i> Jhonatan Cañon</td>
+                        <td><span class="status done"><i class="fas fa-check-circle"></i> Done</span></td>
+                        <td>10/02/2026</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="text-align: right; margin-top: 10px;">
+            <i class="fas fa-arrow-right"></i> 
+            <a href="#" style="color: #1c4e70;">Ver tablero completo en GitHub Projects</a>
+        </p>
+
+        <!-- SECCIÓN DEL EQUIPO -->
+        <h2 class="section-title">👥 Asistentes de Consultoría</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <i class="fas fa-user-tie"></i>
+                <h4>Paula Andrea Betancour</h4>
+                <p>Product Owner · Desarrolladora</p>
+                <small><a href="https://github.com/PaulBetancour" target="_blank">@PaulBetancour</a></small>
+            </div>
+            <div class="team-card">
+                <i class="fas fa-user-cog"></i>
+                <h4>Jhonatan Cañon</h4>
+                <p>Frontend Developer</p>
+                <small><a href="#" target="_blank">@jhonatan-dev</a></small>
+            </div>
+            <div class="team-card">
+                <i class="fas fa-user-ninja"></i>
+                <h4>German Angel Chamorro</h4>
+                <p>Backend / UX</p>
+                <small><a href="#" target="_blank">@german-angel</a></small>
+            </div>
+        </div>
+    </main>
 
     <footer>
-        © 2026 Paula Betancour | Diseño Espacial
+        <div class="container">
+            <p>Proyecto académico · Universidad del Pregrado · Estadística 2026</p>
+            <p>Dirección: Prof. Carlos Isaac Zaínea | <a href="#">Repositorio en GitHub</a></p>
+            <p><i class="fas fa-code"></i> Desarrollado con HTML, CSS y JS · <i class="fas fa-heart" style="color: #dc3545;"></i></p>
+        </div>
     </footer>
 
-    <script src="JS/main.js"></script>
+    <script>
+        // Pequeño script para darle dinamismo a la página (opcional)
+        // Por ejemplo, actualizar la fecha automáticamente o algún contador.
+        console.log('Dashboard de Consultoría Estadística 2026 cargado.');
+        
+        // Aquí podrías agregar funciones para interactuar con la API de GitHub
+        // y traer datos reales de tu proyecto (issues, PRs, etc.)
+    </script>
 </body>
 </html>
