@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultoría Estadística 2026 · Dashboard</title>
-    <!-- Font Awesome para iconos (opcional pero mejora el diseño) -->
+    <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* ===== ESTILOS GENERALES ===== */
@@ -147,7 +147,7 @@
 
         .progress-bar-fill {
             height: 100%;
-            width: 45%; /* Este es el porcentaje de avance, ajústalo */
+            width: 15%; /* Ajustado al progreso real (1/8 tareas ~ 12.5%, lo dejamos en 15%) */
             background: linear-gradient(90deg, #1c4e70, #2a7faa);
             border-radius: 30px;
             position: relative;
@@ -254,6 +254,26 @@
             font-size: 0.9rem;
         }
 
+        .github-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #1c4e70;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .github-link:hover {
+            background-color: #0b2b4f;
+        }
+
+        .github-link i {
+            margin-right: 5px;
+        }
+
         /* ===== FOOTER ===== */
         footer {
             text-align: center;
@@ -279,8 +299,8 @@
             <h1>📊 Consultoría Estadística 2026</h1>
             <p>Dashboard de seguimiento del proyecto · Dirección: Prof. Carlos Isaac Zaínea</p>
             <div class="badge-container">
-                <span class="badge"><i class="fas fa-code-branch"></i> 3 branches</span>
-                <span class="badge"><i class="fas fa-tasks"></i> 8 tareas activas</span>
+                <span class="badge"><i class="fas fa-code-branch"></i> 2 branches (main + New-Branch)</span>
+                <span class="badge"><i class="fas fa-tasks"></i> 1 tarea activa</span>
                 <span class="badge"><i class="fas fa-users"></i> Equipo: 3 miembros</span>
             </div>
         </div>
@@ -316,12 +336,12 @@
         <div class="progress-section">
             <div class="progress-header">
                 <h2><i class="fas fa-rocket" style="margin-right: 10px;"></i> Progreso General del Proyecto</h2>
-                <span>45%</span>
+                <span>15%</span>
             </div>
             <div class="progress-bar-container">
-                <div class="progress-bar-fill" style="width: 45%;">45%</div>
+                <div class="progress-bar-fill" style="width: 15%;">15%</div>
             </div>
-            <p style="color: #4a5c6b;">✅ Fase 1 completada | 🔄 Fase 2 en desarrollo | ⏳ Fase 3 pendiente</p>
+            <p style="color: #4a5c6b;">✅ Fase 1 completada | 🔄 Fase 2: Creación de Issues y Branches | ⏳ Pendiente: Pull Requests y Merges</p>
         </div>
 
         <!-- TABLA DE TAREAS POR PARTICIPANTE -->
@@ -333,47 +353,52 @@
                         <th>Tarea / Issue</th>
                         <th>Asignado a</th>
                         <th>Estado</th>
-                        <th>Fecha Límite</th>
+                        <th>Rama Asociada</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>#3 Crear sección "Servicios" con diseño responsive</td>
-                        <td class="member"><i class="fas fa-user-circle"></i> Jhonatan Cañon</td>
+                        <td>#1 Cambios (pendiente de definir)</td>
+                        <td class="member"><i class="fas fa-user-circle"></i> Por asignar</td>
                         <td><span class="status todo"><i class="fas fa-clock"></i> Backlog</span></td>
-                        <td>20/02/2026</td>
+                        <td><code>New-Branch</code> (creada)</td>
                     </tr>
                     <tr>
-                        <td>#5 Implementar formulario de contacto con JS</td>
-                        <td class="member"><i class="fas fa-user-circle"></i> German Angel</td>
-                        <td><span class="status progress"><i class="fas fa-spinner"></i> In Progress</span></td>
-                        <td>22/02/2026</td>
-                    </tr>
-                    <tr>
-                        <td>#1 Configurar rulesets en rama main</td>
-                        <td class="member"><i class="fas fa-user-circle"></i> Paula Betancour</td>
-                        <td><span class="status done"><i class="fas fa-check-circle"></i> Done</span></td>
-                        <td>15/02/2026</td>
-                    </tr>
-                    <tr>
-                        <td>#7 Diseñar logo y paleta de colores</td>
-                        <td class="member"><i class="fas fa-user-circle"></i> Paula Betancour</td>
-                        <td><span class="status todo"><i class="fas fa-clock"></i> Ready</span></td>
-                        <td>25/02/2026</td>
-                    </tr>
-                    <tr>
-                        <td>#4 Conectar repositorio con GitHub Pages</td>
-                        <td class="member"><i class="fas fa-user-circle"></i> Jhonatan Cañon</td>
-                        <td><span class="status done"><i class="fas fa-check-circle"></i> Done</span></td>
-                        <td>10/02/2026</td>
+                        <td colspan="4" style="text-align: center; color: #4a5c6b; font-style: italic;">
+                            <i class="fas fa-info-circle"></i> Se espera la creación de más Issues por parte de los compañeros de otros equipos.
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <p style="text-align: right; margin-top: 10px;">
-            <i class="fas fa-arrow-right"></i> 
-            <a href="#" style="color: #1c4e70;">Ver tablero completo en GitHub Projects</a>
-        </p>
+        <div style="text-align: right; margin-top: 20px;">
+            <a href="https://github.com/users/PaulBetancour/projects/2/views/1" target="_blank" class="github-link">
+                <i class="fab fa-github"></i> Ver tablero completo en GitHub Projects
+            </a>
+        </div>
+
+        <!-- SECCIÓN DE ACCIONES PENDIENTES -->
+        <h2 class="section-title">⏭️ Próximos Pasos (Según la presentación)</h2>
+        <div style="background: white; border-radius: 15px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <ul style="list-style: none;">
+                <li style="margin-bottom: 15px; display: flex; align-items: center;">
+                    <span style="background: #28a745; color: white; width: 25px; height: 25px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 15px;">✓</span>
+                    <strong>Paso 1 y 2:</strong> Repositorio creado y primera versión subida (¡Completado!)
+                </li>
+                <li style="margin-bottom: 15px; display: flex; align-items: center;">
+                    <span style="background: #ffc107; color: #1e2b3c; width: 25px; height: 25px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 15px;">🔄</span>
+                    <strong>Paso 3:</strong> Configurar Rulesets en main (Pendiente)
+                </li>
+                <li style="margin-bottom: 15px; display: flex; align-items: center;">
+                    <span style="background: #ffc107; color: #1e2b3c; width: 25px; height: 25px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 15px;">🔄</span>
+                    <strong>Paso 5:</strong> Crear Issues en repositorios de compañeros (Pendiente)
+                </li>
+                <li style="margin-bottom: 15px; display: flex; align-items: center;">
+                    <span style="background: #ffc107; color: #1e2b3c; width: 25px; height: 25px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 15px;">🔄</span>
+                    <strong>Paso 6, 7 y 8:</strong> Resolver Issues con branches, crear PR y hacer merge (Pendiente)
+                </li>
+            </ul>
+        </div>
 
         <!-- SECCIÓN DEL EQUIPO -->
         <h2 class="section-title">👥 Asistentes de Consultoría</h2>
@@ -388,7 +413,7 @@
                 <i class="fas fa-user-cog"></i>
                 <h4>Jhonatan Cañon</h4>
                 <p>Frontend Developer</p>
-                <small><a href="#" target="_blank">@jhonatan-dev</a></small>
+                <small><a href="#" target="_blank">@jhonatan-canon</a></small>
             </div>
             <div class="team-card">
                 <i class="fas fa-user-ninja"></i>
@@ -402,18 +427,18 @@
     <footer>
         <div class="container">
             <p>Proyecto académico · Universidad del Pregrado · Estadística 2026</p>
-            <p>Dirección: Prof. Carlos Isaac Zaínea | <a href="#">Repositorio en GitHub</a></p>
+            <p>Dirección: Prof. Carlos Isaac Zaínea | 
+                <a href="https://github.com/PaulBetancour/PaulBetancour.github.io" target="_blank">
+                    <i class="fab fa-github"></i> Repositorio en GitHub
+                </a>
+            </p>
             <p><i class="fas fa-code"></i> Desarrollado con HTML, CSS y JS · <i class="fas fa-heart" style="color: #dc3545;"></i></p>
         </div>
     </footer>
 
     <script>
-        // Pequeño script para darle dinamismo a la página (opcional)
-        // Por ejemplo, actualizar la fecha automáticamente o algún contador.
         console.log('Dashboard de Consultoría Estadística 2026 cargado.');
-        
-        // Aquí podrías agregar funciones para interactuar con la API de GitHub
-        // y traer datos reales de tu proyecto (issues, PRs, etc.)
+        console.log('URL del Projects: https://github.com/users/PaulBetancour/projects/2/views/1');
     </script>
 </body>
 </html>
