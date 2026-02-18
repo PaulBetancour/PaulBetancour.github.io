@@ -21,9 +21,9 @@ La página incluye secciones de servicios, equipo de trabajo, casos de éxito y 
 
 | Nombre | Rol | GitHub |
 | :--- | :--- | :--- |
-| **Paula Andrea Betancour** | Product Owner / Desarrolladora | [@PaulBetancour](https://github.com/PaulBetancour) |
-| **Jhonatan Cañon** | Desarrollador Frontend | [@usuario-jhonatan](https://github.com) |
-| **German Angel Chamorro** | Desarrollador Backend / UX | [@usuario-german](https://github.com) |
+| **Paula Andrea Betancour** |Desarrollador Backend / UX  | [@PaulBetancour](https://github.com/PaulBetancour) |
+| **Jhonatan Cañon** | Desarrollador Frontend | [@jhonatancaon1234.github.io](https://github.com/jhonatancaon1234/jhonatancaon1234.github.io.git) |
+| **German Angel Chamorro** | Product Owner / Desarrolladora  | [@Grmng31.github.io](https://github.com/Grmng31/Grmng31.github.io.git) |
 
 *Nota: Reemplazar los usuarios de GitHub de Jhonatan y German con sus perfiles reales.*
 
