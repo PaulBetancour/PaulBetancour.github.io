@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paula Betancour | Data & Finance Analyst</title>
+    <title>Paula Betancour | Data & Finance Consultant</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -18,125 +19,182 @@
                         pastelPink: '#FCE4EC',
                         pastelLavender: '#F3E5F5',
                         softPurple: '#9575CD',
-                        deepRose: '#880E4F',
-                        accentPastel: '#E1F5FE'
+                        deepRose: '#AD1457',
+                        slateDark: '#1E293B'
                     }
                 }
             }
         }
     </script>
     <style>
-        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
-        .gradient-text { background: linear-gradient(90deg, #9575CD, #ED1E79); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        html { scroll-behavior: smooth; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.5); }
+        .gradient-bg { background: linear-gradient(135deg, #FDFBFD 0%, #FCE4EC 100%); }
+        .timeline-dot { position: absolute; left: -9px; top: 0; width: 18px; height: 18px; border-radius: 50%; border: 4px solid white; }
     </style>
 </head>
+<body class="gradient-bg text-gray-800">
 
-<body class="bg-[#FDFBFD] text-gray-800">
-
-    <nav class="sticky top-0 z-50 glass-card px-6 py-4 flex justify-between items-center">
-        <h1 class="text-xl font-bold gradient-text italic">PB</h1>
-        <div class="space-x-6 text-sm font-semibold uppercase tracking-wider">
+    <nav class="sticky top-0 z-50 glass-card px-8 py-4 flex justify-between items-center shadow-sm">
+        <span class="text-2xl font-bold tracking-tighter text-softPurple italic">PB</span>
+        <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest text-gray-500">
             <a href="#sobre-mi" class="hover:text-softPurple transition">Sobre Mí</a>
             <a href="#habilidades" class="hover:text-softPurple transition">Habilidades</a>
             <a href="#experiencia" class="hover:text-softPurple transition">Experiencia</a>
-            <a href="#contacto" class="hover:text-softPurple transition text-deepRose">Contacto</a>
+            <a href="#contacto" class="px-4 py-2 bg-softPurple text-white rounded-full hover:bg-deepRose transition">Contacto</a>
         </div>
     </nav>
 
-    <section id="sobre-mi" class="min-h-screen flex items-center justify-center px-8 bg-gradient-to-br from-pastelPink via-white to-pastelLavender">
-        <div class="max-w-5xl grid md:grid-cols-2 gap-12 items-center">
-            <div class="relative">
-                <div class="absolute -inset-4 bg-softPurple opacity-20 rounded-full blur-2xl"></div>
-                <img src="IMG/profile.jpg" alt="Paula Betancour" class="relative rounded-2xl shadow-2xl border-8 border-white w-full max-w-sm mx-auto">
-            </div>
-            <div>
-                <h2 class="text-4xl font-bold mb-4">Paula Andrea Betancour</h2>
-                <h3 class="text-xl text-softPurple font-medium mb-6">Estadística | Analista de Datos e Inventarios</h3>
-                <p class="text-gray-600 leading-relaxed mb-6">
-                     Profesional en formación con visión estratégica en finanzas y contabilidad. Especialista en transformar grandes bases de datos en <b>dashboards dinámicos</b> para la alta gerencia. Mi enfoque une el rigor estadístico con la precisión contable para optimizar la toma de decisiones.
+    <section id="sobre-mi" class="pt-20 pb-16 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <span class="text-softPurple font-bold tracking-widest uppercase text-sm italic">Consultoría & Análisis</span>
+                <h1 class="text-5xl font-bold mt-2 mb-6 leading-tight">Paula Andrea <br><span class="text-deepRose">Betancour</span></h1>
+                <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                    Estudiante de <b>Estadística</b> y Tecnóloga en Finanzas. Especialista en la gestión de <b>grandes volúmenes de datos</b> y optimización de inventarios. Mi enfoque combina el análisis predictivo con la precisión contable para transformar bases de datos complejas en decisiones estratégicas.
                 </p>
-                <div class="flex gap-4">
-                    <span class="bg-white px-4 py-2 rounded-full shadow-sm text-xs font-bold border border-pastelLavender">#SQL</span>
-                    <span class="bg-white px-4 py-2 rounded-full shadow-sm text-xs font-bold border border-pastelLavender">#RStudio</span>
-                    <span class="bg-white px-4 py-2 rounded-full shadow-sm text-xs font-bold border border-pastelLavender">#Finanzas</span>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-white px-4 py-2 rounded-lg shadow-sm border border-pastelPink text-xs font-bold"><i class="fas fa-database mr-2 text-softPurple"></i>Big Data</span>
+                    <span class="bg-white px-4 py-2 rounded-lg shadow-sm border border-pastelPink text-xs font-bold"><i class="fab fa-python mr-2 text-softPurple"></i>Python & R</span>
+                    <span class="bg-white px-4 py-2 rounded-lg shadow-sm border border-pastelPink text-xs font-bold"><i class="fas fa-chart-pie mr-2 text-softPurple"></i>Power BI</span>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 flex justify-center">
+                <div class="relative">
+                    <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-softPurple rounded-2xl"></div>
+                    <img src="IMG/profile.jpg" alt="Paula Betancour" class="relative z-10 rounded-2xl shadow-xl w-80 h-96 object-cover bg-white">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="habilidades" class="py-20 px-8 max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-16">Especialidades & Análisis</h2>
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-                <div class="p-6 glass-card rounded-xl">
-                    <h4 class="font-bold mb-2"><i class="fas fa-database text-softPurple mr-2"></i> Manejo de Datos</h4>
-                    <p class="text-sm text-gray-500"> Optimización de bases de datos, SQL y programación básica en RStudio y Visual Basic.</p>
-                </div>
-                <div class="p-6 glass-card rounded-xl">
-                    <h4 class="font-bold mb-2"><i class="fas fa-chart-line text-softPurple mr-2"></i> Reportes Estratégicos</h4>
-                    <p class="text-sm text-gray-500">[cite: 3, 34] Creación de informes dinámicos en Dashboard para indicadores de facturación y mermas.</p>
-                </div>
-            </div>
-            <div class="bg-white p-8 rounded-2xl shadow-xl border border-pastelPink">
-                <h4 class="text-center font-bold mb-4">Dominio de Herramientas</h4>
-                <canvas id="skillsChart"></canvas>
-            </div>
-        </div>
-    </section>
-
-    <section id="experiencia" class="py-20 bg-pastelLavender/30 px-8">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12 border-l-4 border-softPurple pl-4">Trayectoria Profesional</h2>
+    <section id="habilidades" class="py-20 bg-white/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4">Stack Tecnológico & Análisis</h2>
+            <p class="text-center text-gray-500 mb-16 italic">Visualización de competencias técnicas y dominio de herramientas</p>
             
-            <div class="space-y-12">
-                <div class="relative pl-8 border-l-2 border-dashed border-softPurple">
-                    <span class="absolute -left-3 top-0 w-6 h-6 bg-softPurple rounded-full border-4 border-white"></span>
-                    <h4 class="text-xl font-bold">Analista Data Inventario</h4>
-                    <p class="text-sm text-softPurple font-semibold mb-3">2022 - Presente</p>
-                    <p class="text-gray-600">[cite: 34] Liderazgo en estrategias de comunicación para mejorar indicadores de facturación y optimización de bases de datos para gerencia.</p>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 glass-card p-8 rounded-3xl shadow-sm">
+                    <h3 class="font-bold mb-6 flex items-center"><i class="fas fa-chart-area mr-3 text-softPurple"></i> Dominio de Herramientas de Datos</h3>
+                    <canvas id="techChart" height="150"></canvas>
                 </div>
-
-                <div class="relative pl-8 border-l-2 border-dashed border-softPurple">
-                    <span class="absolute -left-3 top-0 w-6 h-6 bg-pink-300 rounded-full border-4 border-white"></span>
-                    <h4 class="text-xl font-bold">Asistente Financiera</h4>
-                    <p class="text-sm text-softPurple font-semibold mb-3">Marzo 2019 - Marzo 2020</p>
-                    <p class="text-gray-600">[cite: 29, 30] Implementación de cobros activos personalizados, logrando una alta recuperación de cartera y gestión de formatos bancarios/pólizas.</p>
+                
+                <div class="space-y-4">
+                    <div class="p-6 bg-white rounded-2xl shadow-sm border-l-4 border-softPurple">
+                        <h4 class="font-bold text-sm uppercase text-gray-400 mb-2">Bases de Datos</h4>
+                        <p class="font-semibold italic leading-relaxed">Manejo avanzado de SQL y gestión de Big Data para reportes de alta gerencia.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-2xl shadow-sm border-l-4 border-pink-300">
+                        <h4 class="font-bold text-sm uppercase text-gray-400 mb-2">Programación</h4>
+                        <p class="font-semibold italic leading-relaxed">RStudio, Python y automatización de procesos mediante Visual Basic (VBA).</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-2xl shadow-sm border-l-4 border-pastelLavender">
+                        <h4 class="font-bold text-sm uppercase text-gray-400 mb-2">Visualización</h4>
+                        <p class="font-semibold italic leading-relaxed">Dashboards dinámicos en Power BI y Excel para indicadores de facturación y mermas.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contacto" class="py-20 text-center">
-        <h2 class="text-3xl font-bold mb-8">¿Hablamos de Datos?</h2>
-        <p class="text-gray-500 mb-8">Disponible para consultorías en análisis financiero y estadístico.</p>
-        <div class="flex justify-center gap-8">
-            <a href="mailto:tu-correo@ejemplo.com" class="text-2xl hover:text-softPurple transition"><i class="fas fa-envelope"></i></a>
-            <a href="#" class="text-2xl hover:text-softPurple transition"><i class="fab fa-linkedin"></i></a>
-            <a href="tel:+57[cite: 22]" class="text-2xl hover:text-softPurple transition"><i class="fas fa-phone"></i></a>
+    <section id="experiencia" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-16 border-b-2 border-pastelPink pb-4 inline-block">Trayectoria Profesional</h2>
+            
+            <div class="relative border-l-2 border-pastelPink ml-3 space-y-16">
+                
+                <div class="relative pl-10">
+                    <div class="timeline-dot bg-softPurple"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-slateDark">Analista Data Inventario & Customer Support</h3>
+                        <span class="text-softPurple font-bold bg-pastelLavender px-4 py-1 rounded-full text-sm self-start md:self-center mt-2 md:mt-0">2020 - Actualidad</span>
+                    </div>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Liderazgo en la gestión de datos para optimizar indicadores de facturación y cobro. Responsable del análisis de <b>grandes bases de datos</b> para la identificación de mermas y mejora de informes estratégicos presentados a gerencia.
+                    </p>
+                    <ul class="grid md:grid-cols-2 gap-3 text-sm font-medium italic">
+                        <li><i class="fas fa-check-circle text-softPurple mr-2"></i>Estrategias de comunicación para mejorar KPI de facturación.</li>
+                        <li><i class="fas fa-check-circle text-softPurple mr-2"></i>Análisis y gestión oportuna de PQRSF.</li>
+                        <li class="md:col-span-2 text-deepRose font-bold"><i class="fas fa-award mr-2"></i>Logro: Reconocimientos múltiples "Max Excelencia" por superar expectativas de facturación.</li>
+                    </ul>
+                </div>
+
+                <div class="relative pl-10">
+                    <div class="timeline-dot bg-pink-300"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-slateDark">Asistente Financiera</h3>
+                        <span class="text-gray-400 font-bold bg-gray-100 px-4 py-1 rounded-full text-sm self-start md:self-center mt-2 md:mt-0">2019 - 2020</span>
+                    </div>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Gestión integral de cartera y procesos contables. Soporte en licitaciones y manejo de documentación societaria (actas de junta directiva).
+                    </p>
+                    <ul class="grid md:grid-cols-2 gap-3 text-sm font-medium italic">
+                        <li><i class="fas fa-check-circle text-pink-300 mr-2"></i>Implementación de cobros activos personalizados.</li>
+                        <li><i class="fas fa-check-circle text-pink-300 mr-2"></i>Gestión de información exógena cambiaria.</li>
+                        <li class="md:col-span-2 text-deepRose font-bold"><i class="fas fa-star mr-2"></i>Logro: Alta tasa de recuperación de cartera mediante modelos de cobro personalizados.</li>
+                    </ul>
+                </div>
+
+                <div class="relative pl-10">
+                    <div class="timeline-dot bg-gray-300"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-slateDark">Analista Contable y Financiera (Etapa Productiva)</h3>
+                        <span class="text-gray-400 font-bold bg-gray-100 px-4 py-1 rounded-full text-sm self-start md:self-center mt-2 md:mt-0">2018 - 2019</span>
+                    </div>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Control de inventarios y gestión administrativa de clientes. Análisis de mermas y auditoría documental.
+                    </p>
+                    <div class="bg-pastelPink/20 p-4 rounded-xl border border-pastelPink italic text-sm">
+                        <b>Logro clave:</b> Cumplimiento de objetivos por encima de la media, resultando en la vinculación directa y plan carrera en la organización.
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-xs text-gray-400">
-        © 2026 Paula Betancour | Diseñado con enfoque Estadístico & Pastel
+    <section id="contacto" class="py-20 bg-slateDark text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6">¿Iniciamos un proyecto?</h2>
+            <p class="text-pastelPink mb-12 text-lg">Especialista en convertir caos de datos en reportes limpios y accionables.</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="mailto:tu-correo@ejemplo.com" class="bg-white text-slateDark px-8 py-3 rounded-full font-bold hover:bg-softPurple hover:text-white transition shadow-lg">
+                    <i class="fas fa-envelope mr-2"></i> Enviar Correo
+                </a>
+                <a href="#" class="bg-softPurple text-white px-8 py-3 rounded-full font-bold hover:bg-deepRose transition shadow-lg">
+                    <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-xs text-gray-400 uppercase tracking-widest">
+        Paula Betancour © 2026 | Estadística & Datos
     </footer>
 
     <script>
-        const ctx = document.getElementById('skillsChart').getContext('2d');
+        const ctx = document.getElementById('techChart').getContext('2d');
         new Chart(ctx, {
-            type: 'radar',
+            type: 'bar',
             data: {
-                labels: ['SQL', 'Contabilidad', 'Estadística', 'Dashboards', 'Gestión Inventarios', 'Excel/VBA'],
+                labels: ['SQL (Postgres/MySQL)', 'Power BI', 'RStudio', 'Excel (VBA)', 'Python', 'Estadística'],
                 datasets: [{
-                    label: 'Nivel de Pericia',
-                    data: [85, 90, 80, 95, 88, 92],
-                    backgroundColor: 'rgba(149, 117, 205, 0.2)',
-                    borderColor: '#9575CD',
-                    pointBackgroundColor: '#880E4F'
+                    label: 'Nivel Técnico (%)',
+                    data: [95, 90, 85, 95, 80, 88],
+                    backgroundColor: [
+                        '#9575CD', '#FCE4EC', '#9575CD', '#FCE4EC', '#9575CD', '#FCE4EC'
+                    ],
+                    borderRadius: 10,
+                    borderWidth: 0
                 }]
             },
             options: {
-                scales: { r: { suggestMin: 0, suggestMax: 100 } },
-                plugins: { legend: { display: false } }
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, max: 100, grid: { display: false } },
+                    x: { grid: { display: false } }
+                }
             }
         });
     </script>
